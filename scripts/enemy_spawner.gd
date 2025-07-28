@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var enemy_scene: PackedScene
-@export var spawn_time: float = 10.0  # Tempo total de spawn (em segundos)
-@export var interval: float = 1.5     # Intervalo entre spawns de inimigos
+@export var spawn_time: float = 7.0  # Tempo total de spawn (em segundos)
+@export var interval: float = 3.5     # Intervalo entre spawns de inimigos
 
 var spawn_timer: float
 

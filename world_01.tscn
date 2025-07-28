@@ -157,7 +157,7 @@ drag_right_margin = 0.5
 editor_draw_limits = true
 
 [node name="EnemySpawner" parent="." instance=ExtResource("12_s8drv")]
-position = Vector2(208, 197)
+position = Vector2(569, 50)
 enemy_scene = ExtResource("14_kioyb")
 
 [node name="Label" type="Label" parent="EnemySpawner"]

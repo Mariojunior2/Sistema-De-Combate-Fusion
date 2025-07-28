@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cde3qshh2dt1q" path="res://caracteres/enemy.gd" id="1_3rh35"]
 [ext_resource type="Texture2D" uid="uid://c2frorfutmlpy" path="res://caracteres/MainCharacter(FreePack)/robo.png" id="1_c60sh"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3rh35"]
-radius = 2.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rh35"]
+size = Vector2(37, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3rh35"]
 atlas = ExtResource("1_c60sh")
@@ -34,23 +34,25 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rocpj"]
-radius = 3.0
+radius = 21.8403
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1phbd"]
-radius = 7.0
+radius = 27.2947
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8jftk"]
-radius = 4.12311
+radius = 30.5941
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_mask = 22
 script = ExtResource("1_3rh35")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_3rh35")
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_3rh35")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.00585938, 0.00561535)
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(0.065918, 0.0664063)
 sprite_frames = SubResource("SpriteFrames_k53wm")
 animation = &"attack"
 autoplay = "idle"
@@ -80,4 +82,5 @@ wait_time = 5.0
 one_shot = true
 
 [node name="wall_detector" type="RayCast2D" parent="."]
-target_position = Vector2(0, 10)
+position = Vector2(0, 16)
+target_position = Vector2(0, 21)

@@ -5,3 +5,6 @@ res://actors/player.tscn
 res://caracteres/enemy.tscn
 res://caracteres/character_body_2d.gd
 res://caracteres/enemy.gd
+res://armas/bala.tscn
+res://armas/bala.gd
+res://scripts/enemy_spawner.gd
