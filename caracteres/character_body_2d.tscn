@@ -1,9 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://beu2frm0ep0gg"]
+[gd_scene load_steps=45 format=3 uid="uid://beu2frm0ep0gg"]
 
 [ext_resource type="Script" uid="uid://dhxoc7j6futhd" path="res://caracteres/character_body_2d.gd" id="1_b8ckh"]
 [ext_resource type="Texture2D" uid="uid://dcbq6nnjmgfps" path="res://caracteres/MainCharacter(FreePack)/Idle.png" id="1_xajrm"]
 [ext_resource type="Texture2D" uid="uid://ddlg7g26batrh" path="res://caracteres/MainCharacter(FreePack)/atack.png" id="2_b8ckh"]
 [ext_resource type="PackedScene" uid="uid://ymysv44exvxq" path="res://armas/arma1.tscn" id="2_dlyl5"]
+[ext_resource type="Texture2D" uid="uid://bkxutms0s4gff" path="res://assets/Health Bar v2.png" id="5_yqy4a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nssi8"]
 atlas = ExtResource("2_b8ckh")
@@ -217,6 +218,77 @@ height = 48.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f7myk"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua707"]
+atlas = ExtResource("5_yqy4a")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkwqa"]
+atlas = ExtResource("5_yqy4a")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41w2c"]
+atlas = ExtResource("5_yqy4a")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nkr1"]
+atlas = ExtResource("5_yqy4a")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31m4k"]
+atlas = ExtResource("5_yqy4a")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opp7g"]
+atlas = ExtResource("5_yqy4a")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jglmw"]
+atlas = ExtResource("5_yqy4a")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bncfn"]
+atlas = ExtResource("5_yqy4a")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77ki2"]
+atlas = ExtResource("5_yqy4a")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21ei1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua707")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkwqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41w2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nkr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31m4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opp7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jglmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bncfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77ki2")
+}],
+"loop": true,
+"name": &"lifes",
+"speed": 2.0
+}]
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_b8ckh")
 
@@ -241,3 +313,9 @@ shape = SubResource("RectangleShape2D_f7myk")
 
 [node name="AttackCooldownTimer" type="Timer" parent="."]
 wait_time = 3.103
+
+[node name="life_bar" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -24)
+scale = Vector2(0.855469, 0.855469)
+sprite_frames = SubResource("SpriteFrames_21ei1")
+animation = &"lifes"

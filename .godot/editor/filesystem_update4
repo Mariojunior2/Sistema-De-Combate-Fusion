@@ -1,3 +1,7 @@
 res://world_01.tscn
 res://words/word_2.tscn
 res://caracteres/character_body_2d.tscn
+res://actors/player.tscn
+res://caracteres/enemy.tscn
+res://caracteres/character_body_2d.gd
+res://caracteres/enemy.gd

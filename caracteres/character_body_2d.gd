@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var dash_duration := 0.3
 @export var max_health := 20
 @export var attack_damage := 1
+@onready var life_bar := $"./life_bar" as AnimatedSprite2D  #
 var player: CharacterBody2D = null
 
 var is_alert := false
@@ -41,6 +42,9 @@ func _ready():
 
 
 func take_damage(amount : int = 0) -> void:
+	if life_bar.frame < life_bar.sprite_frames.get_frame_count(life_bar.animation) - 1:
+		life_bar.frame += 1
+
 	current_health -= amount
 	print("Player levou dano! HP atual: ", current_health)
 
